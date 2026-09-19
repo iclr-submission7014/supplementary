@@ -4,7 +4,6 @@
  try{
   const response=await fetch('bbox_examples.json');if(!response.ok)throw Error('Bounding-box examples unavailable.');const data=await response.json();let selected=0,mode='generated';
   root.append(el('h2','section-title','2.3 Layout-Based Generation from Ideogram-Style Bounding Boxes'));
-  root.append(el('p','bbox-intro','Ideogram-style bounding boxes provide a spatial description of a scene. We assign a token level to each box and derive a Level-of-Token layout map, which guides image generation with FLUX.2 9B. This connects box-based scene planning to spatial control over the generation budget, with finer tokens for selected objects and textures.'));
   const tabs=el('div','bbox-tabs');tabs.setAttribute('role','group');tabs.setAttribute('aria-label','Bounding-box example');root.append(tabs);
   const panels=el('div','bbox-panels');root.append(panels);
   const dialog=el('dialog','bbox-zoom'),close=el('button','','Close'),zoomImage=el('img');close.type='button';close.onclick=()=>dialog.close();dialog.append(close,zoomImage);root.append(dialog);
