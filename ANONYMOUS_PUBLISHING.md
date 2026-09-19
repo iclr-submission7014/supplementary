@@ -6,13 +6,14 @@ Every new checkout must run:
 git config --local user.name 'Anonymous Authors'
 git config --local user.email 'iclr-submission7014@users.noreply.github.com'
 git config --local core.hooksPath .githooks
-chmod +x .githooks/pre-push
+chmod +x .githooks/pre-commit .githooks/pre-push
 ```
 
 Authenticate as `iclr-submission7014` only. Before deployment, inspect staged
 files for identifying names, emails, institution-specific paths, external links,
 and embedded media metadata. Do not merge or cherry-pick identifying history.
-The pre-push hook validates every reachable commit's author and committer;
+The pre-commit hook checks resolved author and committer identities, including
+environment overrides. The pre-push hook validates every reachable commit's author and committer;
 hooks are local safeguards, not server-enforced restrictions.
 
 Verify the public commit metadata and deployment after every push. Freeze the
