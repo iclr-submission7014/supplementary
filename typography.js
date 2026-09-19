@@ -7,7 +7,6 @@
   let family=data.families[0],compare=false,overlay=false,active=null;
   const positions=Object.fromEntries(data.families.map(f=>[f,0]));
   root.append(el('h2','','2.4 Typography with Spatial Token Control'));
-  root.append(el('p','type-intro','We construct Level-of-Token layout maps that allocate fine tokens along letterforms and curves, while using coarse tokens in the surrounding background. Combined with text prompts describing materials and appearance, these maps guide diverse typography and decorative compositions.'));
   const toolbar=el('div','type-toolbar'),filters=el('div','type-filters');filters.setAttribute('role','group');filters.setAttribute('aria-label','Typography family');
   const toggles=[];function toggle(){const b=button('Compare with dense FLUX.2',()=>{compare=!compare;toggles.forEach(t=>t.setAttribute('aria-pressed',String(compare)));render();if(active)renderModal()});b.setAttribute('aria-pressed',String(compare));toggles.push(b);return b}
   const overlayToggles=[];function overlayToggle(){const b=button('Grid overlay',()=>{overlay=!overlay;overlayToggles.forEach(t=>t.setAttribute('aria-pressed',String(overlay)));render();if(active)renderModal()});b.setAttribute('aria-pressed',String(overlay));overlayToggles.push(b);return b}
