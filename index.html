@@ -77,7 +77,7 @@ body>p{max-width:1480px;margin:auto;padding-left:32px;padding-right:32px}
 </ol>
 <h2>Video generation</h2>
 <ol start="4">
-<li><a href="#video-demos"><span>4</span>Interactive layout demo</a></li>
+<li><a href="#video-demos"><span>4</span>Agent-Assisted and Manually created LoT Video Generation</a></li>
 <li><a href="#video-results"><span>5</span>Layout-controlled results</a>
 <ol><li><a href="#video-source-dof">Depth of field</a></li>
 <li><a href="#video-source-regions">Semantic masks &amp; bounding boxes</a></li>
@@ -113,7 +113,7 @@ document.addEventListener('keydown',e=>{
 },true);
 </script>
 <!-- video-demos:start -->
-<section id="video-demos" aria-label="Interactive video token layout demonstrations" style="max-width:1480px;margin:0 auto;scroll-margin-top:24px"><iframe id="video-demo-frame" src="video_demos.html?v=prompt-label-1" title="Interactive Video Control with a Level-of-Token Layout Map" loading="lazy" allow="autoplay; fullscreen" style="display:block;width:100%;height:1250px;border:0"></iframe></section>
+<section id="video-demos" aria-label="Interactive video token layout demonstrations" style="max-width:1480px;margin:0 auto;scroll-margin-top:24px"><iframe id="video-demo-frame" src="video_demos.html?v=concise-video-2" title="Agent-Assisted and Manually created LoT Video Generation" loading="lazy" allow="autoplay; fullscreen" style="display:block;width:100%;height:1250px;border:0"></iframe></section>
 <script>window.addEventListener('message',event=>{const f=document.getElementById('video-demo-frame');if(event.source!==f.contentWindow||event.origin!==location.origin||event.data?.type!=='video-demos-height')return;const h=Number(event.data.height);if(Number.isFinite(h)&&h>0&&h<20000)f.style.height=Math.ceil(h)+'px'});</script>
 <!-- video-demos:end -->
 <header id="video-results"><h1 class="section-title">5. Layout Controlled Video Generation — Qualitative Results</h1></header>
