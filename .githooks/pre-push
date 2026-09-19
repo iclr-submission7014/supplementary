@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+"""Reject public history containing non-anonymous authors or committers."""
+import subprocess
+import sys
+
+expected = ['Anonymous Authors', 'iclr-submission7014@users.noreply.github.com'] * 2
+for line in sys.stdin:
+    local_ref, local_sha, remote_ref, remote_sha = line.split()
+    if set(local_sha) == {'0'}:
+        continue
+    history = subprocess.check_output([
+        'git', 'log', '--format=%H%x09%an%x09%ae%x09%cn%x09%ce', local_sha
+    ], text=True)
+    for commit in history.splitlines():
+        fields = commit.split('\t')
+        if fields[1:] != expected:
+            sys.exit('Push blocked: non-anonymous author/committer in ' + fields[0])
