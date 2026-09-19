@@ -15,7 +15,7 @@
   const stats=el('div','bbox-stats');stats.setAttribute('aria-live','polite');
   let timings={};fetch('bbox_timings.json?v=1').then(r=>r.ok?r.json():{}).then(d=>{timings=d;render()}).catch(()=>{});
   controls.append(stats,el('span','','Generation view:'),viewGroup);root.append(controls);
-  const details=el('details','bbox-details'),summary=el('summary','','Prompt'),prompt=el('p');details.append(summary,prompt);root.append(details);
+  const details=el('details','bbox-details'),summary=el('summary','','Generation prompt'),prompt=el('p');details.append(summary,prompt);root.append(details);
   const buttons=data.examples.map((example,i)=>{const b=el('button','',example.title);b.type='button';b.onclick=()=>{selected=i;render()};tabs.append(b);return b});
   function render(){
    const e=data.examples[selected];buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));

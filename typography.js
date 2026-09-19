@@ -30,7 +30,7 @@
    filterButtons.forEach((b,i)=>b.setAttribute('aria-pressed',String(data.families[i]===family)));
    const rows=data.samples.filter(e=>e.family===family);
    updateNavigation(navigation,rows);updateNavigation(modalNavigation,rows);
-   cards.replaceChildren();for(const e of [rows[positions[family]]]){const card=el('article','type-card');card.dataset.sample=e.number;const head=el('div','type-card-head');head.append(el('h3','',e.title));const images=el('div','type-panels');panels(e,images,false);const stats=el('div','type-stats');statistics(e,stats);const actions=el('div','type-action-row');actions.append(options,stats);card.append(head,actions,images);const details=el('details');details.append(el('summary','','Prompt'),el('p','',e.prompt));card.append(details);cards.append(card)}
+   cards.replaceChildren();for(const e of [rows[positions[family]]]){const card=el('article','type-card');card.dataset.sample=e.number;const head=el('div','type-card-head');head.append(el('h3','',e.title));const images=el('div','type-panels');panels(e,images,false);const stats=el('div','type-stats');statistics(e,stats);const actions=el('div','type-action-row');actions.append(options,stats);card.append(head,actions,images);const details=el('details');details.append(el('summary','','Generation prompt'),el('p','',e.prompt));card.append(details);cards.append(card)}
   }
   render();
  }catch(error){const p=el('p','',error.message);p.setAttribute('role','alert');root.append(p)}
