@@ -3,7 +3,7 @@
  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
  try{
   const response=await fetch('bbox_examples.json');if(!response.ok)throw Error('Bounding-box examples unavailable.');const data=await response.json();let selected=0,mode='generated';
-  root.append(el('h2','section-title','2.3 Layout-Based Generation from Ideogram-Style Bounding Boxes'));
+  root.append(el('h2','','2.3 Layout-Based Generation from Ideogram-Style Bounding Boxes'));
   const tabs=el('div','bbox-tabs');tabs.setAttribute('role','group');tabs.setAttribute('aria-label','Bounding-box example');root.append(tabs);
   const panels=el('div','bbox-panels');root.append(panels);
   const dialog=el('dialog','bbox-zoom'),close=el('button','','Close'),zoomImage=el('img');close.type='button';close.onclick=()=>dialog.close();dialog.append(close,zoomImage);root.append(dialog);
