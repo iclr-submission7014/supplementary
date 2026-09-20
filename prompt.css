@@ -11,7 +11,7 @@ details.generation-prompt {
 }
 details.generation-prompt > summary {
   display:list-item !important;
-  list-style:disclosure-closed outside !important;
+  list-style:disclosure-closed inside !important;
   cursor:pointer;
   padding:0 !important;
   margin:0 !important;
