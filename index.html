@@ -97,11 +97,11 @@ body>p{max-width:1480px;margin:auto;padding-left:32px;padding-right:32px}
 <script src="images.js?v=two-tone-1" defer></script>
 <link rel="stylesheet" href="bbox_examples.css?v=timing-1">
 <section id="bbox-conditioning" aria-label="Layout-based generation from Ideogram-style bounding boxes"></section>
-<script src="bbox_examples.js?v=prompt-style-2" defer></script>
+<script src="bbox_examples.js?v=ratios-only-1" defer></script>
 <link rel="stylesheet" href="typography.css?v=inline-stats-1">
 <section id="typography" aria-label="Typography with spatial token control"></section>
-<script src="typography.js?v=prompt-style-2" defer></script>
-<section id="image-comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="image-comparison-frame" src="image_comparisons.html?v=prompt-style-2" title="Image generation qualitative baseline comparisons" loading="lazy" style="display:block;width:100%;height:1250px;border:0;border-radius:12px"></iframe></section>
+<script src="typography.js?v=ratios-only-1" defer></script>
+<section id="image-comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="image-comparison-frame" src="image_comparisons.html?v=ratios-only-1" title="Image generation qualitative baseline comparisons" loading="lazy" style="display:block;width:100%;height:1250px;border:0;border-radius:12px"></iframe></section>
 <script>
 window.addEventListener('message',event=>{const frame=document.getElementById('image-comparison-frame');if(event.source!==frame.contentWindow||event.origin!==location.origin||event.data?.type!=='image-comparison-height')return;const height=Number(event.data.height);if(Number.isFinite(height)&&height>0&&height<20000)frame.style.height=Math.ceil(height)+'px'});
 // Route arrows to the visible image comparison even before its iframe has focus.
@@ -208,7 +208,7 @@ document.addEventListener('keydown',e=>{if(e.defaultPrevented||e.altKey||e.ctrlK
 // Version the manifest so cached pages cannot keep selecting superseded cues.
 fetch('showcase.json?v=robotics-cue-alignment-2',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Showcase is unavailable');return r.json()}).then(d=>{rows=d.items;const hash=location.hash.slice(1);active=names[hash]?hash:(hash==='bbox'?'regions':'dof');if(hash==='bbox')positions.regions=1;render()}).catch(e=>document.getElementById('gallery').textContent=e.message);
 </script>
-<section id="comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="comparison-frame" src="comparisons.html?v=prompt-style-2" title="Qualitative comparisons: layout, baselines, and ours" loading="lazy" allow="autoplay; fullscreen" style="display:block;width:100%;height:1100px;border:0;border-radius:12px"></iframe></section>
+<section id="comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="comparison-frame" src="comparisons.html?v=ratios-only-1" title="Qualitative comparisons: layout, baselines, and ours" loading="lazy" allow="autoplay; fullscreen" style="display:block;width:100%;height:1100px;border:0;border-radius:12px"></iframe></section>
 <script>
 window.addEventListener('message',event=>{const frame=document.getElementById('comparison-frame');if(event.source!==frame.contentWindow||event.origin!==location.origin||event.data?.type!=='comparison-height')return;const height=Number(event.data.height);if(Number.isFinite(height)&&height>0&&height<20000)frame.style.height=Math.ceil(height)+'px'});
 </script>

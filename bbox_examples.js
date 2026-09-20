@@ -24,7 +24,7 @@
     const figure=el('figure'),heading=el('h3','',title),button=el('button','bbox-image'),img=el('img');img.src=e.media[key];img.alt=`${e.title} — ${title}`;if(key==='layout')GridLines.image(img,e.media.layout.replace(/\.webp$/,'.json'));img.width=data.width;img.height=data.height;button.type='button';button.setAttribute('aria-label','Enlarge '+img.alt);button.append(img);button.onclick=()=>{zoomImage.src=img.src;zoomImage.alt=img.alt;dialog.showModal()};figure.append(heading,button);panels.append(figure)
    }
    const denseTokens=(data.width/16)*(data.height/16),t=timings[e.id];stats.replaceChildren();
-   if(t){const speed=el('div','bbox-stat');speed.title=t.timing+' · '+t.gpu;speed.append(el('strong','',`${(t.dense/t.ours).toFixed(2)}× speedup`),el('span','',`Ours ${t.ours.toFixed(1)} s · Dense ${t.dense.toFixed(1)} s`));stats.append(speed)}
+   if(t){const speed=el('div','bbox-stat');speed.title=t.timing+' · '+t.gpu;speed.append(el('strong','',`${(t.dense/t.ours).toFixed(2)}× speedup`));stats.append(speed)}
    const compression=el('div','bbox-stat');compression.append(el('strong','',`${(denseTokens/e.tokens).toFixed(2)}× token compression`),el('span','',`${e.tokens.toLocaleString()} / ${denseTokens.toLocaleString()} tokens (ours / full resolution)`));stats.append(compression);
    prompt.textContent=e.prompt;
   }
