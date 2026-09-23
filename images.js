@@ -143,7 +143,7 @@ async function mountImageResults(root, manifest='images.json', source=null){
 }
 mountImageResults(document.getElementById('image-results'));
 const sourceSection=document.createElement('section');sourceSection.id='image-source-results';
-const imageHeading=document.createElement('h1');imageHeading.className='section-title';imageHeading.textContent='4. Layout Controlled Image Generation — Qualitative Results';sourceSection.append(imageHeading);
+const imageHeading=document.createElement('h1');imageHeading.className='section-title';imageHeading.textContent='4. Layout Adaptive Image Generation — Qualitative Results';sourceSection.append(imageHeading);
 const imageSummary=document.createElement('p');imageSummary.className='section-summary';imageSummary.textContent="We derive Level-of-Token layouts from different source cues and generate images with the resulting token allocations. Individual-source examples, same-prompt comparisons, and custom layouts illustrate the range of spatial detail control beyond the examples in the paper.";sourceSection.append(imageSummary);
 const sourceHeading=document.createElement('h2');sourceHeading.id='image-individual-layouts';sourceHeading.textContent='4.1 Individual layout sources';sourceSection.append(sourceHeading);
 document.getElementById('image-results').before(sourceSection);
