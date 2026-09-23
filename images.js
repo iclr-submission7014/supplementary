@@ -16,7 +16,7 @@ async function mountImageResults(root, manifest='images.json', source=null){
   }
   const load=src=>cached(imageCache,src,()=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(Error('Could not load '+src));im.src=src}));
   if(source){data.items=data.items.filter(r=>r.sources[source]);data.sources=[source];root.classList.add('image-single-source');}
-  else {root.append(el('h2','','2.2 Same prompt across layout sources'));}
+  else {root.append(el('h2','','3.2 Same prompt across layout sources'));}
   const modelButtons=[];
   if(data.models&&data.items.every(item=>data.sources.every(s=>item.sources[s].media.generated_4b))){
    const modelBar=el('div','image-model-toggle');modelBar.setAttribute('role','group');modelBar.setAttribute('aria-label','Image generation model');
@@ -143,8 +143,8 @@ async function mountImageResults(root, manifest='images.json', source=null){
 }
 mountImageResults(document.getElementById('image-results'));
 const sourceSection=document.createElement('section');sourceSection.id='image-source-results';
-const imageHeading=document.createElement('h1');imageHeading.className='section-title';imageHeading.textContent='2. Layout Controlled Image Generation — Qualitative Results';sourceSection.append(imageHeading);
-const sourceHeading=document.createElement('h2');sourceHeading.id='image-individual-layouts';sourceHeading.textContent='2.1 Individual layout sources';sourceSection.append(sourceHeading);
+const imageHeading=document.createElement('h1');imageHeading.className='section-title';imageHeading.textContent='3. Layout Controlled Image Generation — Qualitative Results';sourceSection.append(imageHeading);
+const sourceHeading=document.createElement('h2');sourceHeading.id='image-individual-layouts';sourceHeading.textContent='3.1 Individual layout sources';sourceSection.append(sourceHeading);
 document.getElementById('image-results').before(sourceSection);
 const sourceGrid=document.createElement('div');sourceGrid.className='image-source-grid';sourceSection.append(sourceGrid);
 for(const [source,label] of [['dof','Depth of field'],['sam3_mask','Semantic mask'],['sam3_box','Bounding box'],['vrs','Texture variance (Variable Rate Shading)']]){

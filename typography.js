@@ -6,7 +6,7 @@
   const response=await fetch('typography.json');if(!response.ok)throw Error('Typography gallery unavailable.');const data=await response.json();
   let family=data.families[0],compare=false,overlay=false,active=null;
   const positions=Object.fromEntries(data.families.map(f=>[f,0]));
-  root.append(el('h2','','2.4 Typography with Spatial Token Control'));
+  root.append(el('h2','','3.4 Typography with Spatial Token Control'));
   const toolbar=el('div','type-toolbar'),filters=el('div','type-filters');filters.setAttribute('role','group');filters.setAttribute('aria-label','Typography family');
   const toggles=[];function toggle(){const b=button('Compare with dense FLUX.2',()=>{compare=!compare;toggles.forEach(t=>t.setAttribute('aria-pressed',String(compare)));render();if(active)renderModal()});b.setAttribute('aria-pressed',String(compare));toggles.push(b);return b}
   const overlayToggles=[];function overlayToggle(){const b=button('Grid overlay',()=>{overlay=!overlay;overlayToggles.forEach(t=>t.setAttribute('aria-pressed',String(overlay)));render();if(active)renderModal()});b.setAttribute('aria-pressed',String(overlay));overlayToggles.push(b);return b}
