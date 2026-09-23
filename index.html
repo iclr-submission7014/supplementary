@@ -57,7 +57,7 @@ body>p{max-width:1480px;margin:auto;padding-left:32px;padding-right:32px}
 .index-return{position:fixed;right:18px;bottom:18px;z-index:5;background:#fff;border:1px solid #d7dfe3;border-radius:8px;padding:7px 12px;color:#205e61;text-decoration:none;font-size:13px;box-shadow:0 2px 8px #17232c12}
 #video-results{scroll-margin-top:24px}
 @media(max-width:650px){.index-groups{gap:12px;padding:12px}.index-group{gap:6px 12px}.index-group strong{flex-basis:100%}.index-return{right:10px;bottom:10px}}
-</style><link rel="stylesheet" href="prompt.css?v=1"></head><body>
+</style><link rel="stylesheet" href="prompt.css?v=1"><link rel="stylesheet" href="section-summary.css?v=1"></head><body>
 <link rel="stylesheet" href="images.css">
 <header class="paper-heading"><h1>Level-of-Token Diffusion</h1><p>ICLR 2027 Submission 7014 · Supplementary Website</p></header>
 <link rel="stylesheet" href="contents.css">
@@ -93,14 +93,15 @@ body>p{max-width:1480px;margin:auto;padding-left:32px;padding-right:32px}
 <script src="contents.js" defer></script>
 <a class="index-return" href="#results-index" aria-label="Back to results navigation index">↑ Index</a>
 <!-- video-demos:start -->
-<section id="video-demos" aria-label="Interactive video token layout demonstrations" style="max-width:1480px;margin:0 auto;scroll-margin-top:24px"><iframe id="video-demo-frame" src="video_demos.html?v=video-first-1" title="Agent-Assisted and Manually created LoT Video Generation" loading="lazy" allow="autoplay; fullscreen" style="display:block;width:100%;height:1250px;border:0"></iframe></section>
+<section id="video-demos" aria-label="Interactive video token layout demonstrations" style="max-width:1480px;margin:0 auto;scroll-margin-top:24px"><iframe id="video-demo-frame" src="video_demos.html?v=section-summaries-1" title="Agent-Assisted and Manually created LoT Video Generation" loading="lazy" allow="autoplay; fullscreen" style="display:block;width:100%;height:1250px;border:0"></iframe></section>
 <script>window.addEventListener('message',event=>{const f=document.getElementById('video-demo-frame');if(event.source!==f.contentWindow||event.origin!==location.origin||event.data?.type!=='video-demos-height')return;const h=Number(event.data.height);if(Number.isFinite(h)&&h>0&&h<20000)f.style.height=Math.ceil(h)+'px'});</script>
 <!-- video-demos:end -->
 <!-- painted-demos:start -->
-<section id="painted-demos" aria-label="Agent-Assisted and Manually created LoT Image Generation" style="max-width:1480px;margin:0 auto;scroll-margin-top:24px"><iframe id="painted-demo-frame" src="painted_demos.html?v=video-first-1" title="Agent-Assisted and Manually created LoT Image Generation" loading="lazy" allow="fullscreen" style="display:block;width:100%;height:1550px;border:0"></iframe></section>
+<section id="painted-demos" aria-label="Agent-Assisted and Manually created LoT Image Generation" style="max-width:1480px;margin:0 auto;scroll-margin-top:24px"><iframe id="painted-demo-frame" src="painted_demos.html?v=section-summaries-1" title="Agent-Assisted and Manually created LoT Image Generation" loading="lazy" allow="fullscreen" style="display:block;width:100%;height:1550px;border:0"></iframe></section>
 <script>window.addEventListener('message',event=>{const f=document.getElementById('painted-demo-frame');if(event.source!==f.contentWindow||event.origin!==location.origin||event.data?.type!=='painted-demos-height')return;const h=Number(event.data.height);if(Number.isFinite(h)&&h>0&&h<20000)f.style.height=Math.ceil(h)+'px'});</script>
 <!-- painted-demos:end -->
 <header id="video-results"><h1 class="section-title">3. Layout Controlled Video Generation — Qualitative Results</h1></header>
+<p class="section-summary">We derive Level-of-Token layouts from depth, semantic masks, bounding boxes, and texture variance to generate videos. These examples show how different layout sources allocate detail over time, with full video playback complementing the still frames in the paper.</p>
 <nav id="tabs" aria-label="Layout source"></nav><main id="gallery"><p>Loading selected videos…</p></main>
 <script>
 const names={dof:'Depth of field',regions:'Mask-based layouts',vrs:'Texture variance (Variable Rate Shading)'};
@@ -193,7 +194,7 @@ document.addEventListener('keydown',e=>{if(e.defaultPrevented||e.altKey||e.ctrlK
 fetch('showcase.json?v=robotics-cue-alignment-2',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Showcase is unavailable');return r.json()}).then(d=>{rows=d.items;const hash=location.hash.slice(1);active=names[hash]?hash:(hash==='bbox'?'regions':'dof');if(hash==='bbox')positions.regions=1;render()}).catch(e=>document.getElementById('gallery').textContent=e.message);
 </script>
 <section id="image-results" aria-label="Selected image generation results"></section>
-<script src="images.js?v=video-first-1" defer></script>
+<script src="images.js?v=section-summaries-1" defer></script>
 <link rel="stylesheet" href="bbox_examples.css?v=timing-1">
 <section id="bbox-conditioning" aria-label="Layout-based generation from Ideogram-style bounding boxes"></section>
 <script src="bbox_examples.js?v=video-first-1" defer></script>
@@ -202,11 +203,11 @@ fetch('showcase.json?v=robotics-cue-alignment-2',{cache:'no-store'}).then(r=>{if
 <script src="typography.js?v=video-first-1" defer></script>
 
 
-<section id="comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="comparison-frame" src="comparisons.html?v=video-first-1" title="Qualitative comparisons: layout, baselines, and ours" loading="lazy" allow="autoplay; fullscreen" style="display:block;width:100%;height:1100px;border:0;border-radius:12px"></iframe></section>
+<section id="comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="comparison-frame" src="comparisons.html?v=section-summaries-1" title="Qualitative comparisons: layout, baselines, and ours" loading="lazy" allow="autoplay; fullscreen" style="display:block;width:100%;height:1100px;border:0;border-radius:12px"></iframe></section>
 <script>
 window.addEventListener('message',event=>{const frame=document.getElementById('comparison-frame');if(event.source!==frame.contentWindow||event.origin!==location.origin||event.data?.type!=='comparison-height')return;const height=Number(event.data.height);if(Number.isFinite(height)&&height>0&&height<20000)frame.style.height=Math.ceil(height)+'px'});
 </script>
-<section id="image-comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="image-comparison-frame" src="image_comparisons.html?v=video-first-1" title="Image generation qualitative baseline comparisons" loading="lazy" style="display:block;width:100%;height:1250px;border:0;border-radius:12px"></iframe></section>
+<section id="image-comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="image-comparison-frame" src="image_comparisons.html?v=section-summaries-1" title="Image generation qualitative baseline comparisons" loading="lazy" style="display:block;width:100%;height:1250px;border:0;border-radius:12px"></iframe></section>
 <script>
 window.addEventListener('message',event=>{const frame=document.getElementById('image-comparison-frame');if(event.source!==frame.contentWindow||event.origin!==location.origin||event.data?.type!=='image-comparison-height')return;const height=Number(event.data.height);if(Number.isFinite(height)&&height>0&&height<20000)frame.style.height=Math.ceil(height)+'px'});
 // Route arrows to the visible image comparison even before its iframe has focus.
