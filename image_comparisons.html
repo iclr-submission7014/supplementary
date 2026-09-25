@@ -56,6 +56,6 @@ window.addEventListener('message',e=>{
 });
 const renderLoaded=render;let navigationTicket=0;
 render=async function(){const ticket=++navigationTicket;if($('panels').children.length)await MediaPreload.prepare(rows[index],$('panels'));if(ticket!==navigationTicket)return;MediaPreload.busy($('panels'),false);renderLoaded();MediaPreload.enqueue([rows[(index+1)%rows.length],rows[(index-1+rows.length)%rows.length]],$('panels'))};
-fetch('image_comparisons.json').then(r=>{if(!r.ok)throw Error('Image comparisons unavailable');return r.json()}).then(d=>{rows=d.items;rows.forEach((r,i)=>{const b=document.createElement('button');b.setAttribute('aria-label',`Show comparison ${i+1}`);b.onclick=()=>{index=i;render()};$('dots').append(b)});render()}).catch(e=>$('error').textContent=e.message);
+fetch('image_comparisons.json?v=remove-elephant-1').then(r=>{if(!r.ok)throw Error('Image comparisons unavailable');return r.json()}).then(d=>{rows=d.items;rows.forEach((r,i)=>{const b=document.createElement('button');b.setAttribute('aria-label',`Show comparison ${i+1}`);b.onclick=()=>{index=i;render()};$('dots').append(b)});render()}).catch(e=>$('error').textContent=e.message);
 new ResizeObserver(()=>{if(window.parent!==window)window.parent.postMessage({type:'image-comparison-height',height:document.body.getBoundingClientRect().height},location.origin)}).observe(document.body);
 </script></html>

@@ -208,7 +208,7 @@ fetch('showcase.json?v=robotics-cue-alignment-2',{cache:'no-store'}).then(r=>{if
 <script>
 window.addEventListener('message',event=>{const frame=document.getElementById('comparison-frame');if(event.source!==frame.contentWindow||event.origin!==location.origin||event.data?.type!=='comparison-height')return;const height=Number(event.data.height);if(Number.isFinite(height)&&height>0&&height<20000)frame.style.height=Math.ceil(height)+'px'});
 </script>
-<section id="image-comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="image-comparison-frame" src="image_comparisons.html?v=section-summaries-1" title="Image generation qualitative baseline comparisons" loading="lazy" style="display:block;width:100%;height:1250px;border:0;border-radius:12px"></iframe></section>
+<section id="image-comparisons" style="max-width:1480px;margin:32px auto;padding:0 10px"><iframe id="image-comparison-frame" src="image_comparisons.html?v=remove-elephant-1" title="Image generation qualitative baseline comparisons" loading="lazy" style="display:block;width:100%;height:1250px;border:0;border-radius:12px"></iframe></section>
 <script>
 window.addEventListener('message',event=>{const frame=document.getElementById('image-comparison-frame');if(event.source!==frame.contentWindow||event.origin!==location.origin||event.data?.type!=='image-comparison-height')return;const height=Number(event.data.height);if(Number.isFinite(height)&&height>0&&height<20000)frame.style.height=Math.ceil(height)+'px'});
 // Route arrows to the visible image comparison even before its iframe has focus.
